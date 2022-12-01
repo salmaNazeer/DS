@@ -1,0 +1,61 @@
+#include<stdio.h>
+#include<conio.h>
+void main()
+{
+ int a[50],b[50],c[100],m,n,i,j,k=0;
+ clrscr();
+ printf("enter the size of first array:");
+ scanf("%d",&m);
+ printf("enter sorted elements of first arrray:");
+ for(i=0;i<m;i++)
+ {
+  scanf("%d",&a[i]);
+ }
+ printf("enter the size of second array:");
+ scanf("%d",&n);
+ printf("enter sorted elements of second array:");
+ for(j=0;j<n;j++)
+ {
+  scanf("%d",&b[j]);
+ }
+ i=0;
+ j=0;
+ while(i<m&&j<n)
+ {
+  if(a[i]<b[j])
+  {
+   c[k]=a[i];
+   i++;
+  }
+  else if(a[i]>b[j])
+  {
+   c[k]=b[j];
+   j++;
+  }
+  else
+  {
+   c[k]=a[i];
+   i++;
+   j++;
+  }
+  k++;
+ }
+ while(j<n)
+ {
+   c[k]=b[j];
+   j++;
+   k++;
+ }
+ while(i<m)
+ {
+   c[k]=a[i];
+   i++;
+   k++;
+  }
+  printf("after merging the array is");
+  for(i=0;i<m+n;i++)
+  {
+    printf("%d\n",c[i]);
+  }
+  getch();
+ }
